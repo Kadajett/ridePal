@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+      <div class="Flexible-container">
+          <google-map center="map.center" zoom="map.zoom">
+          <!-- I really need to have route selection in here. I can do it, but I don't have enough time
+          For now, it will have to only show one point of one route lol Poop -->
+            <markers data-ng-repeat="routes in route.routeList" data-ng-if="routes" models="routes" coords="'self'"> 
+            </markers>
+          </google-map>
+
+        <ul>
+          <li data-ng-repeat="routes in route.routeList">
+            {{routes.description}}
+            {{routes}}
+
+            <button type="button" class="btn btn-danger" data-ng-click="route.deleteRoute($index)">Delete</button>
+          </li>
+        </ul>
+      </div>
+      <div>
+      
+      </div>
+    </div>
+  </div>
+</div>
